@@ -99,8 +99,9 @@ const breezePetals: PetalStyle[] = Array.from({ length: 16 }, (_, index) => ({
   '--scale': 0.72 + (index % 4) * 0.12,
 }));
 
-const blossomCardImage = '/img/%EB%B2%9A%EA%BD%83_%EC%A7%84%ED%95%B4.png';
-const stationBackgroundVideo = '/videos/transport_bg.mp4';
+const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+const blossomCardImage = assetPath('img/벚꽃_진해.png');
+const stationBackgroundVideo = assetPath('videos/transport_bg.mp4');
 
 function App() {
   const [activeSection, setActiveSection] = useState<SectionKey>('blossom');
