@@ -518,7 +518,7 @@ button {
   position: absolute;
   left: 24px;
   right: 24px;
-  bottom: 15px;
+  bottom: 11px;
   height: 11px;
   background: #ffd51c;
 }
@@ -527,7 +527,7 @@ button {
   content: "";
   position: absolute;
   right: 24px;
-  width: 70px;
+  width: 50px;
   height: 34px;
   background:
     linear-gradient(156deg, transparent 0 46%, #ffd51c 47% 65%, transparent 66% 100%);
@@ -614,13 +614,14 @@ button {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 10px;
   color: #d5e4ff;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  line-height: 1;
 }
 
 .sign-footer strong {
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.12em;
 }
 
@@ -966,30 +967,42 @@ button {
 
   .station-sign-stage {
     min-height: auto;
-    padding: 18px;
+    padding: 14px;
   }
 
   .platform-backdrop {
-    min-height: 300px;
-    padding: 18px 12px 16px;
+    min-height: 264px;
+    padding: 14px 10px 14px;
   }
 
   .korail-signboard {
     width: 100%;
-    padding: 14px 16px 12px;
+    padding: 12px 14px 20px;
   }
 
   .sign-topline {
-    min-height: 124px;
-    gap: 12px;
+    min-height: 104px;
+    gap: 10px;
   }
 
   .adjacent-station {
-    flex-basis: 110px;
+    flex-basis: 88px;
+  }
+
+  .adjacent-station strong {
+    font-size: 0.88rem;
+  }
+
+  .adjacent-station span:last-child {
+    font-size: 0.6rem;
   }
 
   .sign-center h2 {
-    font-size: clamp(2rem, 7vw, 3rem);
+    font-size: clamp(1.84rem, 6vw, 2.76rem);
+  }
+
+  .sign-center p {
+    font-size: 0.88rem;
   }
 
   .station-list {
@@ -997,15 +1010,16 @@ button {
   }
 
   .station-card-stack {
-    min-height: 320px;
+    min-height: 184px;
   }
 
   .station-selector {
-    max-height: none;
+    margin-top: 0;
+    max-height: 164px;
   }
 
   .station-list {
-    max-height: none;
+    max-height: 92px;
   }
 }
 
@@ -1044,30 +1058,143 @@ button {
   }
 
   .station-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
   }
 
   .sign-topline {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(58px, 0.8fr) minmax(0, 1.4fr) minmax(58px, 0.8fr);
+    align-items: center;
     text-align: center;
+    min-height: 92px;
+    gap: 6px;
   }
 
   .adjacent-station,
   .adjacent-station-left,
   .adjacent-station-right {
     text-align: center;
+    flex-basis: auto;
+  }
+
+  .adjacent-station span:last-child {
+    display: none;
+  }
+
+  .adjacent-station strong {
+    font-size: 0.78rem;
+  }
+
+  .station-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .station-badge-main {
+    width: 36px;
+    height: 36px;
+    font-size: 0.82rem;
+  }
+
+  .platform-backdrop {
+    min-height: 214px;
+    padding: 10px 8px 10px;
+  }
+
+  .korail-signboard {
+    padding: 8px 10px 20px;
+  }
+
+  .korail-signboard::before {
+    left: 16px;
+    right: 16px;
+    bottom: 10px;
+    height: 7px;
+  }
+
+  .korail-signboard::after {
+    right: 16px;
+    bottom: -9px;
+    width: 52px;
+    height: 26px;
+  }
+
+  .sign-center h2 {
+    margin: 4px 0 2px;
+    font-size: clamp(1.72rem, 10vw, 2.46rem);
+  }
+
+  .sign-center p {
+    font-size: 0.74rem;
   }
 
   .sign-footer {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.68rem;
+    transform: translateY(-2px);
+  }
+
+  .sign-footer strong {
+    font-size: 0.9rem;
+  }
+
+  .station-selector {
+    padding: 12px;
+    max-height: 142px;
+  }
+
+  .station-list-header {
+    margin-bottom: 8px;
+  }
+
+  .station-list-header span {
+    font-size: 0.58rem;
+  }
+
+  .station-list-header strong {
+    font-size: 0.82rem;
+  }
+
+  .station-list {
+    max-height: 74px;
+  }
+
+  .station-list-item {
+    padding: 7px 8px;
+  }
+
+  .station-list-name {
+    font-size: 0.74rem;
+  }
+
+  .station-list-code {
+    font-size: 0.58rem;
+  }
+
+  .station-sidebar {
+    gap: 10px;
+  }
+
+  .station-card-stack {
+    min-height: 170px;
+  }
+
+  .sign-footer {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    justify-items: stretch;
     text-align: center;
   }
 
-  .sign-footer span:last-child,
   .sign-line-label {
-    justify-self: center;
+    justify-self: start;
+  }
+
+  .sign-footer span:last-child {
+    justify-self: end;
   }
 }
 
